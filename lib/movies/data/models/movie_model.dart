@@ -1,3 +1,3 @@
-class MovieModel {
-
+class MovieModel extends Movie {
+  MovieModel();
 }
