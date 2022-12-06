@@ -43,16 +43,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-<<<<<<< HEAD
-  equatable:
-    dependency: "direct main"
-    description:
-      name: equatable
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.5"
-=======
->>>>>>> 30691b9024401eafd764a5f34b80ba5a937e6934
   fake_async:
     dependency: transitive
     description:
