@@ -75,7 +75,7 @@ class PopularComponent extends StatelessWidget {
           case StateRequest.error:
             return SizedBox(
               child: Center(
-                child: Text(state.nowPlayingMoviesMessage),
+                child: Text(state.popularMoviesMessage),
               ),
             );
         }

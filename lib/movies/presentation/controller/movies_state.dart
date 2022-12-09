@@ -10,14 +10,21 @@ class MoviesState extends Equatable {
   final List<Movie> popularMovies;
   final StateRequest popularState;
   final String popularMoviesMessage;
+  final List<Movie> topRatedMovies;
+  final StateRequest topRatedState;
+  final String topRatedMoviesMessage;
 
-  const MoviesState(
-      {this.nowPlayingMovies = const [],
-      this.nowPlayingState = StateRequest.loading,
-      this.nowPlayingMoviesMessage = "",
-      this.popularMovies = const [],
-      this.popularState = StateRequest.loading,
-      this.popularMoviesMessage = ""});
+  const MoviesState({
+    this.nowPlayingMovies = const [],
+    this.nowPlayingState = StateRequest.loading,
+    this.nowPlayingMoviesMessage = "",
+    this.popularMovies = const [],
+    this.popularState = StateRequest.loading,
+    this.popularMoviesMessage = "",
+    this.topRatedMovies = const [],
+    this.topRatedState = StateRequest.loading,
+    this.topRatedMoviesMessage = "",
+  });
 
   MoviesState copyWith({
     List<Movie>? nowPlayingMovies,
@@ -26,6 +33,9 @@ class MoviesState extends Equatable {
     List<Movie>? popularMovies,
     StateRequest? popularState,
     String? popularMoviesMessage,
+    List<Movie>? topRatedMovies,
+    StateRequest? topRatedState,
+    String? topRatedMoviesMessage,
   }) {
     return MoviesState(
       nowPlayingMovies: nowPlayingMovies ?? this.nowPlayingMovies,
@@ -35,6 +45,10 @@ class MoviesState extends Equatable {
       popularMovies: popularMovies ?? this.popularMovies,
       popularState: popularState ?? this.popularState,
       popularMoviesMessage: popularMoviesMessage ?? this.popularMoviesMessage,
+      topRatedMovies: topRatedMovies ?? this.topRatedMovies,
+      topRatedState: topRatedState ?? this.topRatedState,
+      topRatedMoviesMessage:
+          topRatedMoviesMessage ?? this.topRatedMoviesMessage,
     );
   }
 
@@ -45,6 +59,9 @@ class MoviesState extends Equatable {
         nowPlayingMoviesMessage,
         popularMovies,
         popularState,
-        popularMoviesMessage
+        popularMoviesMessage,
+        topRatedMovies,
+        topRatedState,
+        topRatedMoviesMessage,
       ];
 }
