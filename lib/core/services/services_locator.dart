@@ -3,6 +3,8 @@ import 'package:movieapp/movies/data/datasource/movie_remote_datasource.dart';
 import 'package:movieapp/movies/data/repository/movies_repository.dart';
 import 'package:movieapp/movies/domain/repository/base_movie_repository.dart';
 import 'package:movieapp/movies/domain/usecases/get_now_playing_movies_usecase.dart';
+import 'package:movieapp/movies/domain/usecases/get_popular_movies_usecase.dart';
+import 'package:movieapp/movies/domain/usecases/get_top_rated_movies_usecase.dart';
 import 'package:movieapp/movies/presentation/controller/movies_block.dart';
 
 final sl = GetIt.instance;
@@ -10,10 +12,12 @@ final sl = GetIt.instance;
 class ServicesLocator {
   void init() {
     //Bloc
-    sl.registerFactory(() => MoviesBloc(sl()));
+    sl.registerFactory(() => MoviesBloc(sl(), sl(), sl()));
 
     //Use Case
     sl.registerLazySingleton(() => GetNowPlayingMoviesUseCase(sl()));
+    sl.registerLazySingleton(() => GetPopularMoviesUseCase(sl()));
+    sl.registerLazySingleton(() => GetTopRatedMoviesUseCase(sl()));
 
     //Repository
     sl.registerLazySingleton<BaseMoviesRepository>(
