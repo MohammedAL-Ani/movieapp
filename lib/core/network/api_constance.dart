@@ -11,7 +11,7 @@ class ApiConstance {
 
   static const String baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
-  static String imageUrl(String imgpath) {
-    return '$baseImageUrl$imgpath';
+  static String imageUrl(String imgPath) {
+    return '$baseImageUrl$imgPath';
   }
 }
