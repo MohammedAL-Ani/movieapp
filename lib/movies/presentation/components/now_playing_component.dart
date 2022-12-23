@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:movieapp/movies/presentation/controller/movies_block.dart';
 import 'package:movieapp/movies/presentation/controller/movies_state.dart';
+import 'package:movieapp/movies/presentation/screens/movie_detail_screen.dart';
 
 import '../../../core/network/api_constance.dart';
 import '../../../core/utils/state_request.dart';
@@ -43,6 +44,11 @@ class NowPlayingComponent extends StatelessWidget {
                         key: const Key('openMovieMinimalDetail'),
                         onTap: () {
                           /// TODO : NAVIGATE TO MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MovieDetailScreen(id: item.id)));
                         },
                         child: Stack(
                           children: [
